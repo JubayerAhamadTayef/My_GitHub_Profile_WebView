@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         binding.webView.loadUrl("https://github.com/JubayerAhamadTayef/")
 
     }
