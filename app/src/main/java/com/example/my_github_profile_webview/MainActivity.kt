@@ -3,6 +3,7 @@ package com.example.my_github_profile_webview
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -48,4 +49,19 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK && binding.webView.canGoBack()) {
+
+            binding.webView.goBack()
+            return true
+
+        } else {
+
+            return super.onKeyDown(keyCode, event)
+
+        }
+    }
+
 }
